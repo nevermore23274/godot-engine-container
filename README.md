@@ -8,8 +8,13 @@ xhost +local:root
 ```
 ## Ensure the user running the container is part of the video group (or the appropriate group for GPU access on your system).
 ```
-sudo gpasswd -a $USER video
+sudo gpasswd -a $USER video && sudo gpasswd -a $USER render
 ```
+You can check your users permissions with:
+```
+ls -l /dev/dri
+```
+Card0 and your Render are the groups you're trying to add USER to.
 
 # Commands
 ## Build
