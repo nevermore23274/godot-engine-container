@@ -10,3 +10,5 @@ podman build -t godot_in_docker .
 ```
 podman run -u=$(id -u $USER):$(id -g $USER) -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw --rm godot_in_docker
 ```
+
+Biggest help: https://github.com/jamesbrink/docker-opengl
