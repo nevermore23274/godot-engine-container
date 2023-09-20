@@ -2,11 +2,15 @@
 This is basically just what the title says, a containerized version of Godot.
 
 # On Local System
-## Grant the root user access to the X server
+- Ensure mesa-utils is on system
+```
+sudo apt install mesa-utils
+```
+- Grant the root user access to the X server
 ```
 xhost +local:root
 ```
-## Ensure the user running the container is part of the video group (or the appropriate group for GPU access on your system).
+- Ensure the user running the container is part of the video group (or the appropriate group for GPU access on your system).
 ```
 sudo gpasswd -a $USER video && sudo gpasswd -a $USER render
 ```
@@ -17,11 +21,11 @@ ls -l /dev/dri
 Card0 and your Render are the groups you're trying to add USER to.
 
 # Commands
-## Build
+- Build
 ```
 podman build -t godot_in_docker .
 ```
-## Run
+- Run
 ```
 podman run -e DISPLAY=$DISPLAY -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native \
 -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native \
