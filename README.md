@@ -4,7 +4,7 @@ This is basically just what the title says, a containerized version of Godot.
 # On Local System
 - Ensure mesa and vulkan utils are on system
 ```
-sudo apt install mesa-utils vulkaninfo
+sudo apt install mesa-utils vulkan-utils
 ```
 - Grant the root user access to the X server
 ```
