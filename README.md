@@ -6,6 +6,10 @@ This is basically just what the title says, a containerized version of Godot.
 ```
 sudo apt install mesa-utils vulkan-tools
 ```
+Or, if you're on Fedora:
+```
+sudo dnf install mesa-demos vulkan-tools
+```
 - Grant the root user access to the X server
 ```
 xhost +local:root
