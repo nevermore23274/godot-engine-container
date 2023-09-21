@@ -41,6 +41,7 @@ podman run -it -e DISPLAY=$DISPLAY -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse
 -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
 -v /dev/dri:/dev/dri:rw \
 -v /dev/snd:/dev/snd \
+-v <location_on_hard_drive>:/godot_projects \
 --group-add $(getent group audio | cut -d: -f3) \
 --group-add $(getent group video | cut -d: -f3) \
 --rm godot_in_docker
